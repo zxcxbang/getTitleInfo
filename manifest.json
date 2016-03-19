@@ -1,0 +1,20 @@
+{
+    "manifest_version":2,
+    "name": "Get Page Brief Info",
+    "description": "get page info, include title and link etc.",
+    "version": "1.0.0",
+    "permissions": [
+        "tabs",
+        "*://*/*"
+    ],
+    //"background_page": "bg.html", 
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [{
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["content_key_event.js"],
+        "run_at": "document_end"
+        //"run_at": "document_start"
+    }]
+}
